@@ -678,10 +678,32 @@ strong {
   min-height: 520px;
 }
 
+.voice__visual {
+  position: relative;
+  overflow: hidden;
+  min-height: 520px;
+  background: var(--beige-dark);
+}
+
 .voice__visual img {
   width: 100%;
   height: 100%;
+  min-height: 520px;
   object-fit: cover;
+  object-position: center;
+  filter: grayscale(100%) contrast(1.05) brightness(1.02);
+}
+
+.voice__visual::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    160deg,
+    rgba(44, 42, 40, 0.08) 0%,
+    rgba(235, 228, 216, 0.18) 100%
+  );
+  pointer-events: none;
 }
 
 .voice__content {
